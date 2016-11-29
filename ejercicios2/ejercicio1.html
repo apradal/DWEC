@@ -9,14 +9,16 @@
     /*1. Hacer una página que pregunte al usuario el nombre y luego lo incluya en
     un saludo dentro del cuerpo de la página. Si el usuario no rellena el nombre,
      debe aparecer de nuevo la solicitud.*/
-    function pedirUsuario() {
-        var usuario = prompt("Introduzca usuario");
-        return usuario;
+    let user = false;
+
+    while (user == "" || user == null || !user) {
+        user = prompt("Introduzca usuario");
     }
-    do {
-        var user = pedirUsuario();
+
+    if (user) {
+        document.writeln("Bienvenido " + user);
     }
-    while (user == "" || user == null);
+
 </script>
 </body>
 </html>

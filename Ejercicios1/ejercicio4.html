@@ -10,9 +10,11 @@
     <script>
         /*4. Introduce un nombre y una nota mediante caja de texto. Si la nota es mayor que 4,
                 se debe mostrar el texto “nombre está aprobado con un xx”*/
-        var name = prompt("Introduzca un nombre:");
-        var nota = prompt("Introduzca su nota");
-        nota > 4 ? document.writeln(name + " está aprobado con un " + nota + "<br/>") : null;
+        let name = prompt("Introduzca un nombre:");
+        let nota = prompt("Introduzca su nota");
+        if (nota > 4) {
+            document.writeln(name + " está aprobado con un " + nota + "<br/>");
+        }
     </script>
 </body>
 
