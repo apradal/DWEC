@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio1</title>
+</head>
+<body>
+<script>
+    /*Comprobar si una cadena de texto introducida por el usuario está formada sólo por mayúsculas,
+     sólo por minúsculas o por ambas simultáneamente. Puedes ayudarte de la clase String.*/
+    do {
+        var str = prompt("Intropduce una frase");
+    } while (parseInt(str) || str == "" || str == null);
+    function comprobarFrase(str) {
+        var mayusculas, minusculas, respuesta;
+        (str == str.toUpperCase()) ? mayusculas = true : mayusculas = false;
+        (str == str.toLowerCase()) ? minusculas = true : minusculas = false;
+        if (mayusculas){
+            respuesta = "La frase esta en mayusculas";
+        } else if (minusculas){
+            respuesta = "La frase esta en minusculas";
+        } else {
+            respuesta = "Es una frase mezclada";
+        }
+        return respuesta;
+    }
+    document.write(comprobarFrase(str));
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio1</title>
+</head>
+<body>
+<script>
+    /*Crear un a página con un vector con seis componentes {true, 5, false, "hola", "adios", 2}.
+     Con el uso de operadores comprobar si:
+     La cuarta componente es mayor o no que la tercera
+     Realizar un OR entre la primera y la tercera componente
+     Realizar un AND entre la primera y la tercera componente
+     Sumar, restar, multiplicar, dividir y calcular el módulo entre la segunda y la sexta componente*/
+    var vector = [true, 5, false, "hola", "adios", 2];
+    var str = '';
+    (vector[4] > vector[3])? str += "Vector 4 es mayor que 3": str += "Vector 3 es mayor que 4";
+    str += "<br/>";
+    (vector[0] || vector[2]) ? str += "entró al OR" : str += "no entró al OR";
+    str += "<br/>";
+    (vector[0] && vector[2]) ? str += "entró al AND" : str += "no entró al AND";
+    str += "<br/>";
+    str += "Suma: " + parseInt(vector[1] + vector[5]) + "<br/>";
+    str += "Resta: " + parseInt(vector[1] - vector[5]) + "<br/>";
+    str += "Multiplicación: " + vector[1] * vector[5] + "<br/>";
+    str += "Dividir: " + vector[1] / vector[5] + "<br/>";
+    str += "Mod: " + vector[1] % vector[5] + "<br/>";
+    document.write(str);
+</script>
+</body>
+</html>

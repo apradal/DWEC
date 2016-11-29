@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio1</title>
+</head>
+<body>
+<script>
+    /*Dados dos números que introduciremos como datos en el código HTML:
+     Comprobar si el primero es mayor que el segundo
+     Comprobar  si el segundo es positivo
+     Comprobar si el primero es negativo o distinto de cero
+     Comprobar si al sumar uno al primero lo convertimos en mayor igual que el segundo.*/
+    var str = "";
+    do{
+        var n1 = parseInt(prompt("Introduzca el primer número"));
+    }while (isNaN(n1));
+    do{
+        var n2 = parseInt(prompt("Introduzca el segundo número"));
+    }while (isNaN(n2));
+    function comprobar(n1,n2) {
+        (n1 > n2) ? str += "El número "+n1+" es mayor que "+n2+"<br/>" : str += "El número "+n2+" es mayor que "+n1+"<br/>";
+        (n2 == Math.abs(n2)) ? str += "El número "+n2+ " es positivo<br/>" : str+= "El número "+n2+" no es positivo<br/>";
+        (n1 != Math.abs(n1) || n1 != 0) ? str += "El número "+n1+" es negativo o distinto a 0<br/>" : str += "El número "+n1+" es 0<br/>";
+        (n1+1 >= n2) ? str += "El número "+n1+" es mayor o igual a "+n2+"<br/>" : str += "El número "+n1+" es menor a "+n2+"<br/>";
+        return str;
+    }
+    document.write(comprobar(n1,n2));
+</script>
+</body>
+</html>

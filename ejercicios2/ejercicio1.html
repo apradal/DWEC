@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio1</title>
+</head>
+<body>
+<script>
+    /*1. Hacer una página que pregunte al usuario el nombre y luego lo incluya en
+    un saludo dentro del cuerpo de la página. Si el usuario no rellena el nombre,
+     debe aparecer de nuevo la solicitud.*/
+    function pedirUsuario() {
+        var usuario = prompt("Introduzca usuario");
+        return usuario;
+    }
+    do {
+        var user = pedirUsuario();
+    }
+    while (user == "" || user == null);
+</script>
+</body>
+</html>
