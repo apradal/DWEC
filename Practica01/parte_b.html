@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica01</title>
+</head>
+<body>
+<script>
+    var name, day, month, year = false;
+    var actualDate = new Date();
+    //pattern para aceptar solo letras y espacios, pero solo permitiendo el primer y último caracter sean letra.
+    var patt = /^[a-zA-Z][a-zA-Z\s]+[a-zA-Z]$/;
+
+    while (name == "" || name == null || !name || !patt.test(name)) {
+        name = prompt("Introduzca su nombre (con apellidos).");
+    }
+
+    while (day == null || isNaN(day) || day == "" || day <= 0 || day > 31) {
+        day = prompt("Introduzca su día de nacimiento. (1 - 31)");
+    }
+
+    while (month == null || isNaN(month) || month == "" || month <= 0 || month > 12) {
+        month = prompt("Introduzca el mes de nacimiento. (1 - 12)");
+    }
+
+    while (year == null || isNaN(year) || year == "" || year.toString().length > 4 || year.toString().length < 1 ) {
+        year = prompt("Introduzca el año de nacimiento. (-999 - 9999)");
+    }
+
+    if (day && month && year) {
+        var userBday = new Date(year,month,day);
+    }
+
+    function seachFirtsLetter(name) {
+        let position = false;
+        if (name.toUpperCase().includes("A")){
+            position = parseInt(name.toUpperCase().indexOf("A") + 1);
+            document.write("La primera letra A de sunombre está en la posición: " + position + "<br/>");
+        } else if (name.toUpperCase().includes("E")) {
+            position = parseInt(name.toUpperCase().indexOf("E") + 1);
+            document.write("La primera letra E de sunombre está en la posición: " + position + "<br/>");
+        } else if (name.toUpperCase().includes("I")) {
+            position = parseInt(name.toUpperCase().indexOf("I") + 1);
+            document.write("La primera letra I de sunombre está en la posición: " + position + "<br/>");
+        } else if (name.toUpperCase().includes("O")) {
+            position = parseInt(name.toUpperCase().indexOf("O") + 1);
+            document.write("La primera letra O de sunombre está en la posición: " + position + "<br/>");
+        } else if (name.toUpperCase().includes("U")) {
+            position = parseInt(name.toUpperCase().indexOf("U") + 1);
+            document.write("La primera letra U de sunombre está en la posición: " + position + "<br/>");
+        } else {
+            document.write("Su nombre no contiene ninguna vocal (Que raro!!!)");
+        }
+    }
+    function seachLastLetter(name) {
+        let position = false;
+        if (name.toUpperCase().includes("A")){
+            position = parseInt(name.toUpperCase().lastIndexOf("A") + 1);
+            document.write("La última letra A de sunombre está en la posición: " + position + "<br/>");
+        } else if (name.toUpperCase().includes("E")) {
+            position = parseInt(name.toUpperCase().lastIndexOf("E") + 1);
+            document.write("La última letra E de sunombre está en la posición: " + position + "<br/>");
+        } else if (name.toUpperCase().includes("I")) {
+            position = parseInt(name.toUpperCase().lastIndexOf("I") + 1);
+            document.write("La última letra I de sunombre está en la posición: " + position + "<br/>");
+        } else if (name.toUpperCase().includes("O")) {
+            position = parseInt(name.toUpperCase().lastIndexOf("O") + 1);
+            document.write("La última letra O de sunombre está en la posición: " + position + "<br/>");
+        } else if (name.toUpperCase().includes("U")) {
+            position = parseInt(name.toUpperCase().lastIndexOf("U") + 1);
+            document.write("La última letra U de sunombre está en la posición: " + position + "<br/>");
+        } else {
+            document.write("Su nombre no contiene ninguna vocal (Que raro!!!)");
+        }
+    }
+
+    document.write("Buenos días " + name + "<br/>");
+    document.write("Tu nombre tiene " + name.length + " caracteres, incluidos espacios<br/>");
+    seachFirtsLetter(name);
+    seachLastLetter(name);
+    document.write("Tu nombre menos las tres primeras letras es: " + name.substr(3) + "<br/>");
+    document.write("Tu nombre en mayúsculas " + name.toUpperCase() + "<br/><br/>");
+    document.write("Tu edad es: " + parseInt(actualDate.getFullYear() - userBday.getFullYear()) + " años.<br/>")
+    document.write("Naciste un feliz " + userBday.getDate() + " de " + userBday.getMonth() + " del año " + userBday.getFullYear() + "<br/><br/>");
+    document.write("El coseno de 180 es: " + Math.cos(180) + "<br/>");
+    document.write("Ejemplo de número al azar: " + Math.random());
+</script>
+</body>
+</html>
